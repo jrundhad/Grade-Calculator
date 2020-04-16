@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Grade Calculator</title>
+    <style>
+     body{
+       background-color: navajowhite;
+     }
+     table{ 
+      border-spacing: 10px; 
+      width: 100%;
+    } 
+     td {
+       border: orangered;
+       border-style: solid;
+       padding: 1em;
+     }
+
+     .calc{
+      width: 100%;
+      padding: 1em;
+      cursor: pointer;
+     }
+     
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Grade Calculator</h1>
+    </div>
+    <p>Enter your current grades and the weightage of each grade below and hit enter to find out your current grade</p>
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td># of components</td>
+            <td>grade (%)</td>
+            <td>weightage (%)</td>
+            <td style="display: none;">grade</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>
+              <input type="number" name="grade[]" min="0" step="any" class="form-control">
+            </td>
+            <td>
+              <input type="number" name="weightage[]" min="0" step="any" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>
+              <input type="number" name="grade[]" min="0" step="any" class="form-control">
+            </td>
+            <td>
+              <input type="number" name="weightage[]" min="0" step="any" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>
+              <input type="number" name="grade[]" min="0" step="any" class="form-control">
+            </td>
+            <td>
+              <input type="number" name="weightage[]" min="0" step="any" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>
+              <input type="number" name="grade[]" min="0" step="any" class="form-control">
+            </td>
+            <td>
+              <input type="number" name="weightage[]" min="0" step="any" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>
+              <input type="number" name="grade[]" min="0" step="any" class="form-control">
+            </td>
+            <td>
+              <input type="number" name="weightage[]" min="0" step="any" class="form-control">
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+      <button class="calc">Calulate Grade</button>
+    </div>
+  </body>
+</html>
