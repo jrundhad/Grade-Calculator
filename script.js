@@ -27,6 +27,7 @@ function generateTable(low, high){
     }
 }
 
+//function is still a work in progress
 function compute(){
     for(var i=0;i<size;i++){
         var grade=$("#" + i).children(".grade").text();
