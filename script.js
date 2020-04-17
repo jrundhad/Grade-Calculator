@@ -1,4 +1,4 @@
-var size=0;
+var size=6;
 
 $(document).ready(function(){
     generateTable(1, size);
