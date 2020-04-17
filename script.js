@@ -1,4 +1,4 @@
-var size=6;
+var size=0;
 
 $(document).ready(function(){
     generateTable(1, size);
@@ -42,8 +42,8 @@ function generateTable(low, high){
     for(var i=low;i<=high;i++){
         $("tbody").append("<tr id =" +i + "></tr>");
         $("#" + i).append("<td>" + i + "</td>");
-        $("#" + i).append("<td> <input type='number'class='grade"+i+"' min='0' step='any'> </td>");
-        $("#" + i).append("<td> <input type='number'class='weight"+i+"'min='0' step='any'> </td>");
+        $("#" + i).append("<td> <input type='text'class='grade"+i+"'> </td>");
+        $("#" + i).append("<td> <input type='text'class='weight"+i+"'> </td>");
     }
 }
 
@@ -54,6 +54,9 @@ function compute(){
     for(var i=1;i<=size;i++){
         var currWeight=$(".weight" +i).val();
         var currGrade=$(".grade" +i).val();
+
+        console.log(currWeight);
+        console.log(currGrade);
 
         currWeight=validate(currWeight)/100;
         currGrade=validate(currGrade);
@@ -71,8 +74,14 @@ function compute(){
 
 
 function validate(input){
-    if(Number(input)==false && input!=0){
-        return -1;
+    var decimalCount=0;
+
+    for(var i=0;i<input.length;i++){
+        if(input[i]=="." && decimalCount==0){decimalCount++;}
+
+        else if(input[i]=="." && decimalCount==1){return -1;}
+
+        else if(!Number.isInteger(Number(input[i]))){return -1;}
     }
 
     if(Number(input)<0){
