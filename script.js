@@ -30,7 +30,7 @@ $(document).ready(function(){
             }
             
             else{
-                output="Your final grade is "+ result;
+                output="Your current grade is "+ result;
             }
 
             $("#container").append("<h1>"+output+"</h1>");
