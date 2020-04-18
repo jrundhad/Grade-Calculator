@@ -58,3 +58,11 @@ td {
    border: steelblue;
    border-style: solid;
 }
+
+#final_grade {
+   width: 100%;
+   padding: 1em;
+   cursor: pointer;
+   border: rgb(15, 129, 82);
+   border-style: solid;
+}
