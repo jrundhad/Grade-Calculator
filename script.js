@@ -54,10 +54,7 @@ function compute(){
     for(var i=1;i<=size;i++){
         var currWeight=$(".weight" +i).val();
         var currGrade=$(".grade" +i).val();
-
-        console.log(currWeight);
-        console.log(currGrade);
-
+        
         currWeight=validate(currWeight)/100;
         currGrade=validate(currGrade);
 
