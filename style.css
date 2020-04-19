@@ -15,13 +15,8 @@ table{
    border-spacing: 10px; 
    width: 100%;  
    background-color: rgba(95, 255, 234, 0.493);
-   table-layout:fixed;
-} 
 
-input{
-   display:inline-block;
-   width: 40%;
-}
+} 
 
 td {
     border: orangered;
@@ -58,6 +53,8 @@ td {
    border: steelblue;
    border-style: solid;
 }
+
+
 
 #final_grade {
    width: 100%;

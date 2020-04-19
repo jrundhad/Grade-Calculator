@@ -1,19 +1,22 @@
-<!doctype html>
 
+<!doctype html>
 <html lang="en">
 
   <head>
     <title>Grade Calculator</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
     <script src="script.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
-
     <div>
+
       <h1>Grade Calculator</h1>
+
     </div>
 
     <p>Enter your current grades and the weightage of each grade below and hit enter to find out your current grade</p>
@@ -29,14 +32,23 @@
             </tr>
           </tbody>
         </table>
+
         <button id="add" class="button">Add Row</button>
         <button id="reset" class="button">Reset</button>
         <button id="calc" class="button">Calculate Grade</button>
     </div>
+    
     <div>
       <p>Enter the ideal grade you wish to end the course with?</p>
-      <input type="text" class="ideal_grade">
+      <input type="text" id="ideal_grade">
+   
+      
+      <p>Enter the weight of your final</p>
+      <input type="text"id="ideal_weight">
+      <p></p>
+
       <button id="final_grade" class="button">Calculate grade needed on final</button>
     </div>
   </body>
+
 </html>

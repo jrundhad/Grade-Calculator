@@ -30,10 +30,56 @@ $(document).ready(function(){
             }
             
             else{
-                output="Your current grade is "+ result;
+                output="Your final grade is "+ result;
             }
 
             $("#container").append("<h1>"+output+"</h1>");
+        }
+    });
+
+    $("#final_grade").click(function(){
+        var result=compute();
+
+        var idealGrade=$("#ideal_grade").val();
+        var idealWeight=$("#ideal_weight").val();
+        
+        if(idealWeight.length==0 || idealGrade.length==0){
+            alert("Make sure you fill in both boxes!");
+        }
+
+        else{
+            idealWeight=validate(idealWeight);
+            idealGrade=validate(idealGrade);
+
+            if(idealWeight>=0 && idealGrade>=0){
+                var resultWeight=findWeight();
+
+                if(resultWeight==0 && idealWeight==0){
+                    alert("None of the assessments are weighted!");
+                }
+
+                else if(resultWeight==0){
+                    alert("You need " + idealGrade + "% in the final!");
+                }
+
+                else{
+                    var output=(Number(result)*(resultWeight)/100);  
+                    
+                    output=(output)/(idealWeight+resultWeight)*100;
+
+                    output=((idealGrade-output))/100;
+
+                    output=output*(idealWeight+resultWeight);
+
+                    output=(output)/(idealWeight)*100;
+                    
+                    alert("You need " + output + "% in the final!");
+                }
+            }
+
+            else{
+                alert("All the grades and weights must be a number between 0 and 100.");
+            }
         }
     });
 });
@@ -69,7 +115,6 @@ function compute(){
     return (finalGrade/finalWeight).toFixed(2);
 }
 
-
 function validate(input){
     var decimalCount=0;
 
@@ -90,4 +135,15 @@ function validate(input){
     }
 
     return Number(input);
+}
+
+function findWeight(){
+    var finalWeight=0;
+
+    for(var i=1;i<=size;i++){
+        var currWeight=$(".weight" +i).val();
+        finalWeight+=Number(currWeight);
+    }
+
+    return finalWeight;
 }
