@@ -23,6 +23,9 @@ td {
     border-style: solid;
     padding: 1em;
 }
+input{
+   width: 40%;
+}
 
 .button:hover{
    background: grey;
